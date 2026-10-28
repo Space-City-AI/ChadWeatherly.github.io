@@ -206,7 +206,7 @@
     section { padding: 52px 0; }
     /* Alternating full-width bands (from the original site's tinted sections) */
     .band-tint { background: #edf1f6; }
-    .band-tint .pub-card + .pub-card { border-top-color: #d9e1ec; }
+    .band-tint .pub-subsection-title { color: #5b6b80; }
 
     .section-title {
       font-family: var(--mono);
@@ -221,8 +221,34 @@
     .section-title .num { color: var(--accent); }
 
     /* ===== Entries (research / work) ===== */
-    .entry { margin-bottom: 34px; }
+    .entry {
+      background: #ffffff;
+      border: 1px solid #e4e7ee;
+      border-radius: 12px;
+      padding: 24px 26px;
+      box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+      margin-bottom: 20px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .entry:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(16, 24, 40, 0.09);
+    }
+
     .entry:last-child { margin-bottom: 0; }
+
+    .band-tint .entry { border-color: #dbe3ee; }
+
+    .card-tag {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
 
     .entry-head {
       display: flex;
@@ -307,8 +333,16 @@
 
     .pub-list:last-child { margin-bottom: 0; }
 
-    .pub-card { padding: 20px 0; }
-    .pub-card + .pub-card { border-top: 1px solid var(--border); }
+    .pub-card {
+      background: #ffffff;
+      border: 1px solid #dbe3ee;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 1px 3px rgba(16, 24, 40, 0.05);
+      margin-bottom: 16px;
+    }
+
+    .pub-card:last-child { margin-bottom: 0; }
 
     .pub-card h3 {
       font-size: 1.02rem;
@@ -470,6 +504,7 @@
       <h2 class="section-title"><span class="num">01</span> / Research</h2>
 
       <div class="entry">
+        <div class="card-tag">Continual Learning</div>
         <div class="entry-head">
           <h3>Continual Anomaly Detection Under Industrial Drift</h3>
         </div>
@@ -484,6 +519,7 @@
       </div>
 
       <div class="entry">
+        <div class="card-tag">Anomaly Detection</div>
         <div class="entry-head">
           <h3>Self-Supervised Anomaly Detection</h3>
         </div>
@@ -498,6 +534,7 @@
       </div>
 
       <div class="entry">
+        <div class="card-tag">Edge AI</div>
         <div class="entry-head">
           <h3>Anomaly Detection on Edge Hardware</h3>
         </div>
@@ -519,6 +556,7 @@
       </p>
 
       <div class="entry">
+        <div class="card-tag">Manufacturing Software</div>
         <div class="entry-head">
           <h3>X9 Inc. &amp; MachNine: Manufacturing Software</h3>
           <span class="when">2025 – present</span>
@@ -536,6 +574,7 @@
       </div>
 
       <div class="entry">
+        <div class="card-tag">X-Ray Inspection</div>
         <div class="entry-head">
           <h3>Wellmatics Engineering: X-Ray Inspection</h3>
           <span class="when">2023 – 2025</span>

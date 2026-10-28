@@ -77,6 +77,7 @@ Single-file architecture — everything lives in `index.html` (HTML + embedded C
 - Add Google Analytics or Plausible for visitor tracking (optional)
 
 ## Changelog
+- **2026-10-28** — Cards pass on v3.1, per Chad ("style a little more like before"): Research and Industry Work entries are white cards again (soft shadow, 12px radius, hover lift) with mono teal category labels mirroring the original's card eyebrows (Continual Learning, Anomaly Detection, Edge AI, Manufacturing Software, X-Ray Inspection); Publications are white cards too (CSS only, markup untouched). Hero, bands, spec-table skills, and mono labels unchanged.
 - **2026-10-28** — Warmth pass on v3, per Chad ("split the difference: hybrid details, original warmth"): body sections now alternate full-width bands, warm paper and the original site's blue-gray tint `#edf1f6` (Industry Work, Publications). Hybrid details unchanged.
 - **2026-10-28** — Hybrid techy design (v3) applied at Chad's pick over a full-dark variant, both previewed from a design-research pass: dark blueprint-grid hero band, IBM Plex Sans/Mono type, numbered mono section labels, spec-table skills, bracketed photo, mono readout strip. Copy unchanged; publication markup untouched so the weekly task still works.
 - **2026-10-28** — Color and copy pass on the redesign, per Chad's feedback: navy header restored (full white was too stark), page background is now warm off-white `#f8f7f3`; and every em dash removed from the site copy (16 of them, replaced with colons, commas, or parentheses) under his no-AI-speak rule.
