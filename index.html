@@ -15,7 +15,7 @@
       --text-muted: #75808d;
       --accent: #0f766e;
       --border: #e3e1da;
-      --bg: #f8f7f3;
+      --bg: #f7f5f0;
       --dark: #0c1425;
       --dark-panel: #131e33;
       --dark-border: #233554;
@@ -204,7 +204,9 @@
 
     /* ===== Body sections ===== */
     section { padding: 52px 0; }
-    main section + section { border-top: 1px solid var(--border); }
+    /* Alternating full-width bands (from the original site's tinted sections) */
+    .band-tint { background: #edf1f6; }
+    .band-tint .pub-card + .pub-card { border-top-color: #d9e1ec; }
 
     .section-title {
       font-family: var(--mono);
@@ -461,10 +463,10 @@
     </div>
   </div>
 
-  <main class="wrap">
+  <main>
 
     <!-- ===== RESEARCH ===== -->
-    <section id="research">
+    <section id="research"><div class="wrap">
       <h2 class="section-title"><span class="num">01</span> / Research</h2>
 
       <div class="entry">
@@ -505,10 +507,10 @@
           hardware at line speed, with no network connection to fall back on.
         </p>
       </div>
-    </section>
+    </div></section>
 
     <!-- ===== WORK ===== -->
-    <section id="work">
+    <section id="work" class="band-tint"><div class="wrap">
       <h2 class="section-title"><span class="num">02</span> / Industry Work</h2>
       <p class="section-intro">
         I take on industry work through OffNominal Vision, my consulting practice.
@@ -544,10 +546,10 @@
           by roughly 95% and cut manufacturing time by about 10%.
         </p>
       </div>
-    </section>
+    </div></section>
 
     <!-- ===== SKILLS ===== -->
-    <section id="skills">
+    <section id="skills"><div class="wrap">
       <h2 class="section-title"><span class="num">03</span> / Technical Skills</h2>
 
       <div class="skill-row">
@@ -570,10 +572,10 @@
         <div class="group">Research Areas</div>
         <div class="items">Anomaly detection, self-supervised learning, continual learning, edge AI</div>
       </div>
-    </section>
+    </div></section>
 
     <!-- ===== PUBLICATIONS ===== -->
-    <section id="publications">
+    <section id="publications" class="band-tint"><div class="wrap">
       <h2 class="section-title"><span class="num">04</span> / Publications</h2>
 
       <h3 class="pub-subsection-title">Pre-prints</h3>
@@ -607,7 +609,7 @@
           </a>
         </div>
       </div>
-    </section>
+    </div></section>
 
   </main>
 
