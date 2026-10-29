@@ -288,6 +288,9 @@
       margin-bottom: 6px;
     }
 
+    .pub-card h3 a { color: var(--ink); }
+    .pub-card h3 a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
     .pub-meta { font-size: 0.92rem; color: var(--muted); margin-bottom: 3px; }
     .pub-meta strong { color: var(--ink); }
     .pub-doi { font-family: var(--mono); font-size: 0.8rem; }
@@ -386,7 +389,6 @@
           <li><a href="#research">Research</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#publications">Publications</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -564,6 +566,21 @@
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Paper titles link to the paper: each card's title gets its own DOI link.
+    // Done here (not in the markup) so cards the weekly papers task adds
+    // with its fixed template get a linked title too.
+    document.querySelectorAll('.pub-card').forEach(card => {
+      const doi = card.querySelector('a.pub-doi');
+      const title = card.querySelector('h3');
+      if (!doi || !title || title.querySelector('a')) return;
+      const link = document.createElement('a');
+      link.href = doi.href;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      while (title.firstChild) link.appendChild(title.firstChild);
+      title.appendChild(link);
     });
   </script>
 </body>
