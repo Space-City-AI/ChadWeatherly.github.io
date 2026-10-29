@@ -225,6 +225,20 @@
     .entry h3 { font-family: var(--serif); font-size: 1.45rem; font-weight: 600; line-height: 1.2; }
     .entry p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 
+    .subhead {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      margin: 0 0 16px;
+    }
+
+    .grid + .subhead { margin-top: 44px; }
+
     /* ===== Skills: spec rows ===== */
     .skill-row {
       display: grid;
@@ -403,11 +417,12 @@
           <div class="label">PhD Candidate, University of Houston / Founder, OffNominal Vision</div>
           <h1>Chad Weatherly</h1>
           <p class="lead">
-            I research anomaly detection for industrial inspection in the
+            Through OffNominal Vision, I build software for industrial automation:
+            machine vision and inspection, PLC integration, part traceability, and the
+            operations software manufacturers run on. In the
             <a href="https://slin70.github.io/terms/" target="_blank" rel="noopener">Continual Edge AI Lab</a>
-            under Dr. Sen Lin: models that stay reliable as production changes, learn
-            from normal data, and run on edge hardware. Through OffNominal Vision, I
-            build production software for manufacturers.
+            under Dr. Sen Lin, I research anomaly detection for industrial inspection:
+            models that stay reliable as production changes and run on edge hardware.
           </p>
           <div class="actions">
             <a class="btn btn-primary" href="#research">Read the research</a>
@@ -432,17 +447,17 @@
         <div class="entry">
           <div class="tag"><span class="dot on"></span>Continual Learning</div>
           <h3>Anomaly detection under drift</h3>
-          <p>Inspection models are usually judged on fixed test sets, but production lines change. This work measures which approaches stay reliable when they do. Published at ECCV 2026.</p>
+          <p>Inspection models are usually evaluated on a fixed test set, but production lines drift: tools wear, materials change, lighting shifts. This work benchmarks which approaches stay reliable as conditions change. Published at ECCV 2026.</p>
         </div>
         <div class="entry">
           <div class="tag"><span class="dot"></span>Self-Supervised Learning</div>
           <h3>Learning what normal looks like</h3>
-          <p>Representations trained on unlabeled production data, so that rare and unseen defects stand out.</p>
+          <p>Defects are rare and labeled data is expensive. I train representations on normal production images so that anything unusual stands out, including logical errors such as missing or misplaced parts.</p>
         </div>
         <div class="entry">
           <div class="tag"><span class="dot"></span>Edge AI</div>
           <h3>Inspection at the edge</h3>
-          <p>Compact models that run on site, at line speed, without a data center behind them.</p>
+          <p>Inspection has to run where the parts are. I design compact models that run on embedded hardware at line speed, with no dependence on a data center.</p>
         </div>
       </div>
 
@@ -485,19 +500,54 @@
     <section id="work"><div class="wrap">
       <h2 class="label"><span class="num">02</span> / Industry Work</h2>
       <p class="section-intro">
-        OffNominal Vision is my engineering practice. I build software that runs in
-        production, on the shop floor, not as a demo.
+        OffNominal Vision is my engineering practice. I build software for
+        industrial automation, specializing in manufacturing.
       </p>
+      <h3 class="subhead">What I build</h3>
       <div class="grid">
         <div class="entry">
-          <div class="tag"><span class="dot on"></span>Manufacturing Software<span class="when">2025 – present</span></div>
-          <h3>Manufacturing operations software</h3>
-          <p>For a Houston-area manufacturing group: production scheduling and order management, part and operator traceability, and inspection data systems.</p>
+          <div class="tag"><span class="dot on"></span>Machine Vision</div>
+          <h3>Vision and inspection systems</h3>
+          <p>Automated inspection with deep learning and classical vision: X-ray, 2D and 3D cameras, barcode and QR reading. Experience with Cognex In-Sight, LMI Gocator, Luxonis OAK-D and production X-ray platforms.</p>
         </div>
         <div class="entry">
-          <div class="tag"><span class="dot"></span>X-Ray Inspection<span class="when">2023 – 2025</span></div>
-          <h3>Automated X-ray inspection</h3>
-          <p>Deep-learning inspection for a manufacturer's X-ray line, deployed in production across multiple product lines.</p>
+          <div class="tag"><span class="dot"></span>Controls</div>
+          <h3>PLC and controls integration</h3>
+          <p>Connecting vision and software to the line: PLC logic and I/O on Allen-Bradley and Phoenix Contact PLCnext, Modbus and industrial Ethernet, interlocks and pass/fail handshakes with machine controllers.</p>
+        </div>
+        <div class="entry">
+          <div class="tag"><span class="dot"></span>Traceability</div>
+          <h3>Part and operator tracking</h3>
+          <p>UHF RFID and barcode tracking from the reader hardware to the database, so every part carries its history: who worked it, where, and when.</p>
+        </div>
+        <div class="entry">
+          <div class="tag"><span class="dot"></span>Operations Software</div>
+          <h3>Scheduling, orders and shop-floor displays</h3>
+          <p>Production scheduling, quoting and order management, and live shop-floor boards, integrated with ERP and accounting systems.</p>
+        </div>
+        <div class="entry">
+          <div class="tag"><span class="dot"></span>Edge Deployment</div>
+          <h3>Software that runs on the floor</h3>
+          <p>Applications in Python and Rust on Raspberry Pi, NVIDIA Jetson and industrial PCs, built to run unattended and recover on their own.</p>
+        </div>
+        <div class="entry">
+          <div class="tag"><span class="dot"></span>Infrastructure</div>
+          <h3>Servers, data and connectivity</h3>
+          <p>The servers, databases, APIs and secure remote access that tie stations together and get results to the people who need them.</p>
+        </div>
+      </div>
+
+      <h3 class="subhead">Selected work</h3>
+      <div class="grid">
+        <div class="entry">
+          <div class="tag"><span class="dot on"></span>Manufacturing<span class="when">2025 – present</span></div>
+          <h3>Operations and traceability for an oilfield equipment manufacturer</h3>
+          <p>For a Houston-area manufacturer and its machine shop: RFID operator stations on the production floor, X-ray images filed by part identity, and a scheduling and order management system that is taking over from an off-the-shelf ERP.</p>
+        </div>
+        <div class="entry">
+          <div class="tag"><span class="dot"></span>Energy Components<span class="when">2023 – 2025</span></div>
+          <h3>Deep-learning X-ray inspection</h3>
+          <p>Replaced a rule-based vision system on a production X-ray line with a deep-learning pipeline that grades every part, integrated with the machine's recipe software and controls. Also built multi-camera QR tracking for parts trays.</p>
         </div>
       </div>
     </div></section>
@@ -515,11 +565,15 @@
       </div>
       <div class="skill-row">
         <div class="group">Systems &amp; Backend</div>
-        <div class="items">Flask, Axum / Tokio, SQLite, Linux</div>
+        <div class="items">Flask, Axum / Tokio, REST APIs, SQLite, Linux, systemd</div>
+      </div>
+      <div class="skill-row">
+        <div class="group">Industrial Automation</div>
+        <div class="items">PLCs (Allen-Bradley, Phoenix Contact PLCnext), Modbus, machine vision (Cognex In-Sight, LMI Gocator), UHF RFID, X-ray inspection</div>
       </div>
       <div class="skill-row">
         <div class="group">Hardware</div>
-        <div class="items">Edge devices (NVIDIA Jetson, Raspberry Pi), industrial cameras, RFID</div>
+        <div class="items">NVIDIA Jetson, Raspberry Pi, industrial PCs, Luxonis OAK-D and industrial cameras</div>
       </div>
       <div class="skill-row">
         <div class="group">Research Areas</div>
