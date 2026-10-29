@@ -1,5 +1,7 @@
 # ChadWeatherly.github.io — Project Knowledge
 
+> Repo pk. Parent hub: `../project_knowledge.md` (OffNominal root).
+
 ## Overview
 Personal academic + portfolio website for Chad Weatherly, deployed to GitHub Pages.
 
@@ -11,13 +13,17 @@ Personal academic + portfolio website for Chad Weatherly, deployed to GitHub Pag
 ## Site Structure
 Single-file architecture — everything lives in `index.html` (HTML + embedded CSS + JS). No build tools, no dependencies.
 
-### Sections (current order, as of 2026-10-28)
-1. **About (hero)** — Name, role lines (PhD Candidate, Computer Science — University of Houston; Founder — OffNominal Vision), two plain paragraphs (CEAL research under Dr. Sen Lin, linked to https://slin70.github.io/terms/; OffNominal Vision consulting), portrait photo (chad.jpeg), Houston + chad@offnominal.ai line.
-2. **Research** — Three plain entries, no cards: continual anomaly detection under industrial drift (ECCV 2026 findings), self-supervised anomaly detection (structural vs logical defects; evaluated on MVTec-AD, MVTec-LOCO, VisA), edge deployment (<20M params, Jetson / Pi-class). Unpublished method names (LeJEPA-AD) stay off the site.
-3. **Industry Work** — Short OffNominal Vision intro, then two entries: X9 Inc. & MachNine (2025–present: ShopFloorScheduler→ERP, Rust RFID operator stations, X-ray inspection stations, floor systems) and Wellmatics Engineering (2023–2025, X-ray inspection results). No fee/licensing language.
-4. **Technical Skills** — Five plain text rows: Languages; Machine Learning & Vision; Systems & Backend; Hardware; Research Areas. Tutorial-stack items (pandas, NumPy, scikit-learn, R) removed 2026-10-28 at Chad's request; model architectures still not listed as skills.
-5. **Publications** — Two subsections (Pre-prints, Published Work), papers as `pub-card`s with bolded `Weatherly C`, venue/year metadata, and a clickable DOI/arXiv link. The Pre-prints heading and list hide themselves via CSS while the list is empty. Sits near the bottom of the page, before Contact (moved down from position #3 on 2026-05-26).
-6. **Contact** — chad@offnominal.ai, GitHub, LinkedIn, Google Scholar, ORCID links.
+### Sections (current order, as of 2026-10-29)
+1. **Header** — sticky: the OffNominal mark + "OffNominal", nav links; hamburger under 680px.
+2. **Hero** — mono eyebrow (PhD Candidate, UH / Founder, OffNominal Vision), serif name, serif lead paragraph (CEAL under Dr. Sen Lin, linked; OffNominal Vision builds production software for manufacturers), two buttons, portrait (`chad.jpeg`) with "Houston, Texas", then the bell-curve divider with the accent dot.
+3. **Research** — three panel entries: anomaly detection under drift (ECCV 2026), learning what normal looks like, inspection at the edge. One plain sentence each; method details, results, datasets and hardware specifics stay in the papers. Then **Publications** (`#publications`, Chad 2026-10-29: published work sits under Research): Pre-prints (hidden while empty) + Published Work; `pub-list` / `pub-card` markup unchanged for the weekly task, styled as panels.
+4. **Industry Work** — intro + two panel entries with NO client names or system details: manufacturing operations software (2025 – present, "a Houston-area manufacturing group") and automated X-ray inspection (2023 – 2025, "a manufacturer's X-ray line"). No results figures.
+5. **Technical Skills** (`03`) — spec rows in one panel: Languages; ML & Vision; Systems & Backend; Hardware (generic: edge devices, industrial cameras, RFID); Research Areas.
+6. **Contact band** (dark, `04 / Contact`) — mark, "Work with OffNominal", mailto button, GitHub / LinkedIn / Scholar / ORCID; footer line.
+
+### Copy policy (Chad, 2026-10-29)
+- Keep work descriptions general and professional: no client names, client system names, client results figures or business details on the site. Researchers can read the papers for method detail.
+- No AI-speak and no em dashes anywhere in the site text (2026-10-28).
 
 ### Publications policy (confirmed 2026-05-26)
 - **Pre-prints subsection**: ONLY arXiv (or similar) papers Chad has self-posted publicly. Self-posted arXiv preprints are public-by-definition and OK to list, even pre-review.
@@ -32,11 +38,11 @@ Single-file architecture — everything lives in `index.html` (HTML + embedded C
 - Chad was previously in the Computational Biomedicine Lab (under Kakadiaris) from June 2021 – Dec 2022, which is where the MET Project paper came from. Main PhD advisor since Jan 2024 is Dr. Sen Lin.
 
 ### Design Decisions
-- **Layout (v3, applied 2026-10-28; Chad picked the hybrid of two research-based variants over a full-dark version):** single 800px column. Dark navy (`#0c1425`) hero band over a faint blueprint grid (28px, hero band only): IBM Plex Sans text, detection-style corner brackets on the photo with a coordinates caption, and a mono readout strip with one offset teal cell. Body sections alternate full-width bands: warm paper (`#f7f5f0`) and the original site's blue-gray tint (`#edf1f6`, on Industry Work and Publications), a warmth pass Chad asked for the same day because the flat body read as too much white. Numbered mono section labels (`01 / RESEARCH`), Skills as a spec table with mono row labels, Publications as ruled records with mono DOIs. The dark band returns for Contact; the footer line is mono. IBM Plex Mono is for labels and metadata only, never body text. No cards, shadows, pill tags, gradients, or scroll animations. Copy rule (Chad, 2026-10-28): no AI-speak and no em dashes anywhere in the site text.
-- **Typography:** system font stack (no webfonts). DOI links use ui-monospace; Inter and JetBrains Mono were dropped in the redesign.
-- **Theme:** light only — the dark/light toggle was removed in the 2026-10-28 redesign.
-- **Mobile:** hamburger menu at 680px breakpoint, single column.
-- **No frameworks:** vanilla HTML/CSS/JS; the only script left is the mobile menu.
+- **Brand (applied 2026-10-29):** the OffNominal brand, `~/OffNominal/docs/brand.md` — Outlier mark (nav, contact band, SVG favicon), Mesa + Sage palette (bg `#EFE6DC`, ink `#2B2A22`, sage `#5F6C41`), Newsreader headings + IBM Plex Sans body + IBM Plex Mono labels, "distribution" graphics (curve divider, dot bullets), Direction C layout (1100px, ruled entries, no cards or shadows, dark contact band). Light only.
+- **Section separation (Chad, 2026-10-29):** an ink line between sections, every other section on darker mesa `#E5D9CA`, each section label over a 2px ink rule, entries / skill rows / publications as flat panels (`#F7F1E9`, 1px `#C9BBA8` border, 3px ink top border).
+- **Icons + link previews (2026-10-29):** `favicon.ico` (16/32/48), `favicon.svg`, `apple-touch-icon.png` (180), `icon-192/512.png` + `site.webmanifest` (home screens), `og-image.png` (1200×630 preview card) with og/twitter meta pointing at https://offnominal.ai/. Previews only work once the domain resolves.
+- **No frameworks:** vanilla HTML/CSS/JS; the only script is the mobile menu.
+- The previous navy/teal v3 page is in `_claude_archive/` (git-ignored).
 
 ## Deployment
 - GitHub Pages serves from the `main` branch root
@@ -60,12 +66,13 @@ Single-file architecture — everything lives in `index.html` (HTML + embedded C
 - Pre-print card template and Published Work card template are documented in the scheduled task prompt for reference.
 
 ## Current Status
+- ⚠️ `project_knowledge.md` is TRACKED in this public repo, so GitHub Pages serves it at /project_knowledge.md (client names in old changelog lines). Chad's call: untrack it (`git rm --cached`, now in `.gitignore`) or move it out of the repo.
 - [x] index.html created with all sections
 - [x] project_knowledge.md created
 - [x] Page reordered — Publications moved to bottom (2026-05-26)
 - [x] Pre-prints subsection added with arXiv paper 2605.24251 (2026-05-26)
 - [x] Weekly scheduled task `weekly-website-papers-update` created (2026-05-26)
-- [ ] Chad to review the staged changes (ECCV promotion 2026-09-21, CNAME, and the 2026-10-28 redesign) and `git push` to go live
+- [ ] Chad to review the staged changes (ECCV promotion 2026-09-21, CNAME, the 2026-10-29 brand + copy) and `git push` to go live
 - [ ] Git repo initialized and pushed to GitHub
 - [ ] Site verified live at https://chadweatherly.github.io
 
@@ -73,10 +80,12 @@ Single-file architecture — everything lives in `index.html` (HTML + embedded C
 - Buy a custom domain and point it at GitHub Pages (user asked about this 2026-04-24) — DONE 2026-10-28: offnominal.ai registered at Cloudflare and `CNAME` staged in the repo; remaining step is adding the GitHub Pages DNS records (apex A/AAAA + www CNAME, DNS-only) at Cloudflare, then pushing.
 - Add a blog/writing section if Chad starts publishing posts
 - Add a CV/resume download link (PDF)
-- Consider adding a favicon and social meta (og:image, twitter:card)
+- Consider social meta (og:image, twitter:card); favicon done 2026-10-29
 - Add Google Analytics or Plausible for visitor tracking (optional)
 
 ## Changelog
+- **2026-10-29 (later)** — Per Chad: darker section separation (bands, ink rules, panels); Publications moved under Research (sections renumbered 01 Research, 02 Industry Work, 03 Skills, 04 Contact; nav keeps a Publications link); logo icons for tab / bookmarks / home screen + link-preview card. Checked headless 1280 + 390 px, pub markup byte-identical.
+- **2026-10-29** — OffNominal brand applied (Mesa + Sage, Newsreader + Plex, Outlier mark + favicon, curve divider, Direction C layout) and copy made less specific per Chad (no client names / systems / results; research one sentence each; generic hardware). Publications block kept byte-identical. Checked headless at 1280 and 390 px: no sideways scroll, no JS errors. Uncommitted with the CNAME + ECCV promotion; Chad reviews and pushes.
 - **2026-10-28** — Cards pass on v3.1, per Chad ("style a little more like before"): Research and Industry Work entries are white cards again (soft shadow, 12px radius, hover lift) with mono teal category labels mirroring the original's card eyebrows (Continual Learning, Anomaly Detection, Edge AI, Manufacturing Software, X-Ray Inspection); Publications are white cards too (CSS only, markup untouched). Hero, bands, spec-table skills, and mono labels unchanged.
 - **2026-10-28** — Warmth pass on v3, per Chad ("split the difference: hybrid details, original warmth"): body sections now alternate full-width bands, warm paper and the original site's blue-gray tint `#edf1f6` (Industry Work, Publications). Hybrid details unchanged.
 - **2026-10-28** — Hybrid techy design (v3) applied at Chad's pick over a full-dark variant, both previewed from a design-research pass: dark blueprint-grid hero band, IBM Plex Sans/Mono type, numbered mono section labels, spec-table skills, bracketed photo, mono readout strip. Copy unchanged; publication markup untouched so the weekly task still works.

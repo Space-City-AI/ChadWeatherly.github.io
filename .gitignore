@@ -1,2 +1,4 @@
 .DS_Store
 *.idea/*
+_claude_archive/
+project_knowledge.md
